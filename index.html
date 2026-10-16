@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Beyond the Classroom: Interactive Takeaway Card</title>
+<title>Beyond the Classroom: takeaway card</title>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#F7F5F0;--ink:#1B2A4A;--mut:#4F5B73;--lamp:#9A6200;--card:#FFFFFF;--line:#D9D5CB;--hi:#1B2A4A;--hi-ink:#F7F5F0;
@@ -13,7 +13,7 @@ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:en
 *{box-sizing:border-box}
 html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif}
-main{max-width:620px;margin:0 auto;padding:28px 20px 80px}
+main{max-width:620px;margin:0 auto;padding:28px 20px 90px}
 h1{font-size:2rem;line-height:1.1;font-weight:800;margin:0 0 10px;letter-spacing:-.02em}
 h2{font-size:1.2rem;margin:34px 0 12px;font-weight:800}
 .sub{color:var(--mut);margin:0 0 20px}
@@ -36,8 +36,12 @@ summary:focus-visible,a:focus-visible{outline:3px solid var(--lamp);outline-offs
 .body li{margin:0 0 6px}
 .try{margin-top:14px;padding:12px 14px;border-left:4px solid var(--lamp);background:var(--bg);border-radius:0 8px 8px 0}
 .try b{color:var(--lamp)}
+.ask{margin:30px 0 0;padding:18px;border:2px dashed var(--lamp);border-radius:14px}
+.ask p:last-child{margin:0}
+a{color:var(--lamp);font-weight:600}
+.btn{display:inline-block;margin-top:6px;padding:10px 16px;border-radius:10px;background:var(--hi);color:var(--hi-ink);text-decoration:none;font-weight:600;border:none;cursor:pointer}
 
-/* Interactive Elements Styling */
+/* Interactive Components */
 .interactive-poll{background:var(--card);border:2px solid var(--lamp);border-radius:14px;padding:18px;margin:24px 0}
 .poll-option{display:block;margin:10px 0;padding:12px;border:1px solid var(--line);border-radius:10px;cursor:pointer;transition:all 0.2s ease}
 .poll-option:hover{background:var(--bg)}
@@ -49,7 +53,6 @@ summary:focus-visible,a:focus-visible{outline:3px solid var(--lamp);outline-offs
 .check-item input[type="checkbox"]{width:18px;height:18px;margin-top:4px;accent-color:var(--lamp)}
 
 .sticky-bar{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--line);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;z-index:100}
-.btn{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--hi);color:var(--hi-ink);text-decoration:none;font-weight:600;border:none;cursor:pointer}
 footer{margin-top:26px;color:var(--mut);font-size:.9rem}
 </style>
 </head>
@@ -65,129 +68,28 @@ footer{margin-top:26px;color:var(--mut);font-size:.9rem}
 <h2 style="margin-top:0">Interactive Self-Audit</h2>
 <p>Which ONE practice will you commit to implementing this week?</p>
 <label class="poll-option" onclick="selectPractice(1)"><input type="radio" name="practice" value="1"> 1. Intentional Conversation</label>
-<label class="poll-option" onclick="selectPractice(2)"><input type="radio" name="practice" value="2"> 2. Time Well Used (Systems)</label>
-<label class="poll-option" onclick="selectPractice(3)"><input type="radio" name="practice" value="3"> 3. Intentional Balance &amp; Weekly Joy</label>
-<label class="poll-option" onclick="selectPractice(4)"><input type="radio" name="practice" value="4"> 4. Real Responsibility &amp; Agency</label>
-<label class="poll-option" onclick="selectPractice(5)"><input type="radio" name="practice" value="5"> 5. Chores &amp; Leading by Example</label>
-<div id="feedback" class="feedback-msg">✓ Commitment saved! Scroll down to explore your chosen practice.</div>
+<label class="poll-option" onclick="selectPractice(2)"><input type="radio" name="practice" value="2"> 2. Time Well Used: Activities &amp; Systems</label>
+<label class="poll-option" onclick="selectPractice(3)"><input type="radio" name="practice" value="3"> 3. Intentional Balance: Plan the Fun &amp; Make Space</label>
+<label class="poll-option" onclick="selectPractice(4)"><input type="radio" name="practice" value="4"> 4. Real Responsibility</label>
+<label class="poll-option" onclick="selectPractice(5)"><input type="radio" name="practice" value="5"> 5. Chores &amp; Giving Back</label>
+<div id="feedback" class="feedback-msg">✓ Choice saved! Scroll down to explore your selected practice.</div>
 </div>
 
 <h2>About the speaker</h2>
 <div class="box">
-<p>Hana Barakat is Director of Community Management and Week Without Walls Programs Manager at Catalysts 4 Change (C4C)[span_0](start_span)[span_0](end_span), where she works on experiential learning and alternative educational frameworks[span_1](start_span)[span_1](end_span).</p>
-<p>Hana attended African Leadership Academy (ALA) from 2016 to 2018[span_2](start_span)[span_2](end_span). ALA is a highly selective pan-African boarding school in Johannesburg, South Africa, that brings together young leaders from across the continent[span_3](start_span)[span_3](end_span). She later worked in residential education in Egypt: first as a residential coordinator at Fanar[span_4](start_span)[span_4](end_span), then as Student Life Coordinator at Manara School (2023 to 2025)[span_5](start_span)[span_5](end_span), where she was a Dorm Parent and student advisor working with students and their parents[span_6](start_span)[span_6](end_span).</p>
+<p>Hana Barakat is Director of Community Management and Week Without Walls Programs Manager at Catalysts 4 Change (C4C), where she works on experiential learning and alternative educational frameworks.</p>
+<p>Hana attended African Leadership Academy (ALA) from 2016 to 2018. ALA is a highly selective pan-African boarding school in Johannesburg, South Africa, that brings together young leaders from across the continent. She later worked in residential education in Egypt: first as a residential coordinator at Fanar, then as Student Life Coordinator at Manara School (2023 to 2025), where she was a Dorm Parent and student advisor working with students and their parents.</p>
 </div>
 
-<h2>The practices in detail</h2>
-
-<details id="practice-1">
-<summary>1. Intentional conversation</summary>
-<div class="body">
-<h3>Why it matters</h3>
-<p>Students talk more, and more honestly, when there is a regular, expected space to talk[span_7](start_span)[span_7](end_span). Conversation also has more substance when people don't take their time together for granted[span_8](start_span)[span_8](end_span).</p>
-<h3>At home</h3>
-<div class="check-item"><input type="checkbox" id="c1"><label for="c1">Choose one regular moment (car, dinner, bedtime) and protect it from phones[span_9](start_span)[span_9](end_span).</label></div>
-<div class="check-item"><input type="checkbox" id="c2"><label for="c2">Ask specific questions: "What was the best part of today? What was the hardest?[span_10](start_span)"[span_10](end_span)</label></div>
-<div class="check-item"><input type="checkbox" id="c3"><label for="c3">Share your own day too. Children care more when it goes both ways[span_11](start_span)[span_11](end_span).</label></div>
-<div class="try"><b>Try this week:</b> pick one moment and ask the "best part, hardest part" question three times[span_12](start_span)[span_12](end_span). Listen first; don't fix[span_13](start_span)[span_13](end_span).</div>
-</div>
-</details>
-
-<details id="practice-2">
-<summary>2. Time well used: activities and systems</summary>
-<div class="body">
-<h3>Why it matters</h3>
-<p>Young people need to try things to be ready for the life skills they will need[span_14](start_span)[span_14](end_span). Life needs to be explored and experienced[span_15](start_span)[span_15](end_span).</p>
-<h3>At home</h3>
-<div class="check-item"><input type="checkbox" id="c4"><label for="c4">Help your child choose an activity and agree when you will review how it is going[span_16](start_span)[span_16](end_span).</label></div>
-<div class="check-item"><input type="checkbox" id="c5"><label for="c5">Swap a small part of screen or lost time for something chosen[span_17](start_span)[span_17](end_span).</label></div>
-<div class="try"><b>Try this week:</b> help your child pick one new activity and put a review date in the calendar[span_18](start_span)[span_18](end_span).</div>
-</div>
-</details>
-
-<details id="practice-3">
-<summary>3. Intentional balance: plan the fun, and make space</summary>
-<div class="body">
-<h3>Why it matters</h3>
-<p>Brains need to decompress or they burn out[span_19](start_span)[span_19](end_span). Fun must be part of the weekly rhythm, not just a rare reward[span_20](start_span)[span_20](end_span).</p>
-<h3>At home</h3>
-<div class="check-item"><input type="checkbox" id="c6"><label for="c6">Keep fun and family time in the calendar all year, not just after exams[span_21](start_span)[span_21](end_span).</label></div>
-<div class="check-item"><input type="checkbox" id="c7"><label for="c7">Say it out loud: "You do your best and we'll be okay.[span_22](start_span)"[span_22](end_span)</label></div>
-<div class="try"><b>Try this week:</b> put something light on the busiest day[span_23](start_span)[span_23](end_span). If fun isn't landing, sit together quietly and hold space[span_24](start_span)[span_24](end_span).</div>
-</div>
-</details>
-
-<details id="practice-4">
-<summary>4. Real responsibility</summary>
-<div class="body">
-<h3>Why it matters</h3>
-<p>Students gain confidence and judgment when they make decisions that count and know they were heard[span_25](start_span)[span_25](end_span).</p>
-<h3>At home</h3>
-<div class="check-item"><input type="checkbox" id="c8"><label for="c8">Hand over something real, like planning a family outing within a set budget[span_26](start_span)[span_26](end_span).</label></div>
-<div class="try"><b>Try this week:</b> let your child plan one outing within a budget you set, then talk afterwards about what worked[span_27](start_span)[span_27](end_span).</div>
-</div>
-</details>
-
-<details id="practice-5">
-<summary>5. Chores and giving back</summary>
-<div class="body">
-<h3>Why it matters</h3>
-<p>Chores are small acts that exist for the good of the community[span_28](start_span)[span_28](end_span). Adults must model this by doing chores out in the open, showing everyone contributes equally[span_29](start_span)[span_29](end_span).</p>
-<h3>At home</h3>
-<div class="check-item"><input type="checkbox" id="c9"><label for="c9">Give each child regular, age-appropriate jobs, on weekends too[span_30](start_span)[span_30](end_span).</label></div>
-<div class="check-item"><input type="checkbox" id="c10"><label for="c10">Let children see adults do chores without complaining[span_31](start_span)[span_31](end_span).</label></div>
-<div class="try"><b>Try this week:</b> agree one daily chore per child and keep it for seven days[span_32](start_span)[span_32](end_span).</div>
-</div>
-</details>
-
-<footer>Hana Barakat, Director of Community Management and Week Without Walls Programs Manager, Catalysts 4 Change[span_33](start_span)[span_33](end_span)</footer>
-</main>
-
-<div class="sticky-bar">
-<span><b>STEPS Summit Takeaway</b></span>
-<button class="btn" onclick="sharePage()">Share Link</button>
+<h2>About C4C</h2>
+<div class="box">
+<p>Catalysts 4 Change (C4C) creates learning experiences that turn potential into readiness. It designs experiential learning programs for students, learning that goes beyond the classroom through projects, trips and real-world experience. Programs include Week Without Walls and Model United Nations experiences.</p>
+<p>Find out more, or get in touch to bring this to your school:</p>
+<a class="btn" href="https://c4c.education" target="_blank" rel="noopener">Visit c4c.education</a>
 </div>
 
-<script>
-function selectPractice(num) {
-    document.querySelectorAll('.poll-option').forEach(el => el.classList.remove('selected'));
-    event.currentTarget.classList.add('selected');
-    
-    // Auto open corresponding details section
-    const targetDetails = document.getElementById('practice-' + num);
-    if(targetDetails) {
-        targetDetails.open = true;
-        targetDetails.scrollIntoView({ behavior: 'smooth' });
-    }
-    
-    const feedback = document.getElementById('feedback');
-    feedback.style.display = 'block';
-    localStorage.setItem('c4c_selected_practice', num);
-}
-
-function sharePage() {
-    if (navigator.share) {
-        navigator.share({
-            title: 'Beyond the Classroom - Takeaway Card',
-            url: window.location.href
-        });
-    } else {
-        navigator.clipboard.writeText(window.location.href);
-        alert('Link copied to clipboard!');
-    }
-}
-
-// Restore user choice from previous visit
-window.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem('c4c_selected_practice');
-    if (saved) {
-        const option = document.querySelector(`input[value="${saved}"]`);
-        if (option) {
-            option.checked = true;
-            option.parentElement.classList.add('selected');
-        }
-    }
-});
-</script>
-</body>
-</html>
+<h2>The workshop in brief: what boarding school really teaches</h2>
+<div class="box">
+<p>Boarding school is often misunderstood. Many people assume it is a place to send troubled children for discipline, or something only for students chasing scholarships to universities abroad. For some students and some schools that may be true. But much of what boarding school gives is structure: a way of organising daily life that helps young people take on life better. A lot of that structure can be brought into a normal home or day school.</p>
+<p><b>The idea:</b> adults check in on purpose, time is used well, fun and rest are planned, students carry real responsibility, and everyone helps look after the community. None of this needs a dormitory.</p>
+<p><b>How to use this page:</b> read at your own pace and tap each practice to open it. Each one has what it looked
